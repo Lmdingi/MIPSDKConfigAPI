@@ -1,0 +1,13 @@
+<platformUiControls:VideoOSWindow x:Class="MIPSDKConfigAPI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MIPSDKConfigAPI"
+        xmlns:platformUiControls="clr-namespace:VideoOS.Platform.UI.Controls;assembly=VideoOS.Platform"
+        mc:Ignorable="d"
+        Title="MIPSDKConfigAPI Application" Height="450" Width="800">
+    <Grid>
+        <platformUiControls:VideoOSButtonPrimaryMedium Content="Close" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20" Click="Button_Click" />
+    </Grid>
+</platformUiControls:VideoOSWindow>

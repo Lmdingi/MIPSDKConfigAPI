@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIPSDKConfigAPI", "MIPSDKConfigAPI\MIPSDKConfigAPI.csproj", "{0F417D49-9C45-4591-A62E-EB40D836AECC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F417D49-9C45-4591-A62E-EB40D836AECC}.Debug|x64.ActiveCfg = Debug|x64
+		{0F417D49-9C45-4591-A62E-EB40D836AECC}.Debug|x64.Build.0 = Debug|x64
+		{0F417D49-9C45-4591-A62E-EB40D836AECC}.Release|x64.ActiveCfg = Release|x64
+		{0F417D49-9C45-4591-A62E-EB40D836AECC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83462549-1F9F-42BB-86F4-E91313061272}
+	EndGlobalSection
+EndGlobal
