@@ -1,5 +1,6 @@
 using System;
 using System.Windows;
+using VideoOS.Platform;
 using VideoOS.Platform.SDK.UI.LoginDialog;
 
 namespace MIPSDKConfigAPI
@@ -27,6 +28,16 @@ namespace MIPSDKConfigAPI
             DialogLoginForm loginForm = new DialogLoginForm(new DialogLoginForm.SetLoginResultDelegate((b) => connected = b), integrationId, integrationName, version, manufacturerName);
             //loginForm.LoginLogoImage = MyOwnImage;				// Set own header image
             loginForm.ShowDialog();								// Show and complete the form and login to server
+
+            if(connected)
+            {
+                // disable auto refresh when changed or updated detected
+                VideoOS.Platform.SDK.Environment.Properties.EnableConfigurationRefresh = false;
+                // set amout of waiting time to refresh if the above is true
+                VideoOS.Platform.SDK.Environment.Properties.ConfigurationRefreshIntervalInMs = int.MaxValue;
+                // disable constant checks or event handling in the background
+                EnvironmentManager.Instance.EnableConfigurationChangedService = false;
+            }
 
             if (!connected)
             {
