@@ -36,6 +36,32 @@ namespace MIPSDKConfigAPI.Services
         }
 
         // methods
+        public ConfigurationItem GetItem(string path)
+        {
+            try
+            {
+                var item = Client.GetItem(path);
+                return item;
+            }
+            catch (Exception ex) 
+            {
+                return null;
+            }
+        }
+
+        internal ConfigurationItem[] GetChildItems(string path)
+        {
+            try
+            {
+                return Client.GetChildItems(path);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        // helpers
         private void Initialize()
         {
             try
@@ -60,9 +86,8 @@ namespace MIPSDKConfigAPI.Services
             {
                 // log
             }
-        }        
-
-        // helpers
+        }
+        
         private Bitmap MakeBitmap(byte[] data)
         {
             try

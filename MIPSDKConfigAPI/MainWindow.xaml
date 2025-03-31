@@ -5,9 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MIPSDKConfigAPI"
         xmlns:platformUiControls="clr-namespace:VideoOS.Platform.UI.Controls;assembly=VideoOS.Platform"
+        xmlns:VideoOSPlatformUI="clr-namespace:VideoOS.Platform.UI;assembly=VideoOS.Platform" 
         mc:Ignorable="d"
         Title="MIPSDKConfigAPI Application" Height="450" Width="800">
     <Grid>
-        <platformUiControls:VideoOSButtonPrimaryMedium Content="Close" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20" Click="Button_Click" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <platformUiControls:VideoOSTextBlockLabel Text="List of all defined items:" Margin="10,0,0,0" />
+
+                <!--<VideoOSPlatformUI:ItemPickerWpfUserControl 
+                    x:Name="itemPicker" 
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    IsMultiSelection="False"
+                    SelectedItemChanged="ItemPicker_SelectedItemChanged" />-->
+
+                <platformUiControls:VideoOSTreeView
+                    x:Name="rootTV"
+                    Background="White"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Margin="0 15 0 0"
+                    Grid.Row="1"
+                    ItemIsExpandedPropertyName="IsExpanded" SelectedItemChanged="ItemPicker_SelectedItemChanged" />
+
+                <platformUiControls:VideoOSButtonPrimaryMedium Content="Load" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Load_Click" Margin="0,10,0,0" />
+            </StackPanel>
+        </ScrollViewer>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1">
+            <StackPanel>
+                <platformUiControls:VideoOSTextBlockLabel Grid.Row="0" Text="Details for selected item:" />
+
+                <StackPanel x:Name="detailsPanel">
+                </StackPanel>
+               
+                
+                <platformUiControls:VideoOSTreeView
+                    x:Name="selectedItemDetails"
+                    Background="White"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Margin="0 15 0 0"
+                    Grid.Row="1"
+                    ItemIsExpandedPropertyName="IsExpanded" />
+            </StackPanel>
+        </ScrollViewer>
+
+        <platformUiControls:VideoOSButtonPrimaryMedium Content="Close" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20" Click="Button_Click" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" />
+
+        <DockPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem>
+                    <TextBlock x:Name="statusLabel" Text="Ready" />
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
     </Grid>
 </platformUiControls:VideoOSWindow>

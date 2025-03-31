@@ -87,6 +87,8 @@
     <Compile Include="Services\ConfigApiService.cs" />
     <Compile Include="Services\EndpointBehaviorService.cs" />
     <Compile Include="Services\HttpRequestService.cs" />
+    <Compile Include="Services\IconService.cs" />
+    <Compile Include="Services\ItemDetailsService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
